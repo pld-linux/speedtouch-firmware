@@ -31,7 +31,7 @@ poprzez:
 modem_run [-k] -m -f /usr/share/speedtouch/mgmt.o
 
 (-k nale¿y dodawaæ w przypadku u¿ywania sterownika w przestrzeni j±dra
-dostêpnego w Linuksie 2.4.22+/2.6 zamiast narzêdzia pppoa dzia³ajacego
+dostêpnego w Linuksie 2.4.22+/2.6 zamiast narzêdzia pppoa dzia³aj±cego
 w przestrzeni u¿ytkownika).
 
 %prep

@@ -2,7 +2,7 @@ Summary:	Alcatel SpeedTouch USB ADSL modem firmware
 Summary(pl):	Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB
 Name:		speedtouch-firmware
 Version:	1.3.4
-Release:	1
+Release:	2
 License:	restricted, non-distributable
 Group:		Libraries
 # get it from Alcatel at http://www.speedtouchdsl.com/dvrreg_lx.htm (requires registration)
@@ -11,7 +11,7 @@ Source0:	speedmgmt.tar.gz
 # NoSource0-md5: 102dc7a457c3942ee21dc834db68eac2
 NoSource:	0
 URL:		http://www.speedtouchdsl.com/
-Requires:	speedtouch
+Requires:	speedtouch >= 1.2-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog LICENSE speedtch.usermap
-%{_datadir}/speedtouch
+%{_datadir}/speedtouch/mgmt.o

@@ -13,6 +13,7 @@ NoSource:	0
 URL:		http://www.speedtouchdsl.com/
 BuildRequires:	unzip
 Requires:	speedtouch >= 1.2-1
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -15,7 +15,8 @@ NoSource:	0
 NoSource:	1
 URL:		http://www.speedtouchdsl.com/
 BuildRequires:	unzip
-Requires:	speedtouch >= 1.2-1
+# only for mgmt.o loading
+#Requires:	speedtouch >= 1.2-1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

@@ -7,9 +7,12 @@ License:	restricted, non-distributable
 Group:		Libraries
 Source0:	http://www.speedtouch.com/download/drivers/USB/SpeedTouch330_firmware_3012.zip
 # NoSource0-md5:	2551ce46ef785642f2c6768511f70ff3
-Source1:	http://www.linux-usb.org/SpeedTouch/firmware/firmware-extractor.tar.gz
-# Source1-md5:	752e33faf0b62176114e757dfc1e7191
+Source1:	http://download.ethomson.com/download/speedmgmt.tar.gz
+# NoSource1-md5:	102dc7a457c3942ee21dc834db68eac2
+Source2:	http://www.linux-usb.org/SpeedTouch/firmware/firmware-extractor.tar.gz
+# Source2-md5:	752e33faf0b62176114e757dfc1e7191
 NoSource:	0
+NoSource:	1
 URL:		http://www.speedtouchdsl.com/
 BuildRequires:	unzip
 Requires:	speedtouch >= 1.2-1
@@ -37,35 +40,37 @@ dostêpnego w Linuksie 2.4.22+/2.6 zamiast narzêdzia pppoa dzia³aj±cego
 w przestrzeni u¿ytkownika).
 
 %prep
-%setup -q -c -a1
+%setup -q -c -a1 -a2
 
 %build
 %{__cc} %{rpmcflags} -o fextractor firmware-extractor/firmware.c
 
 # for a silver (revision 4) modem
-revision=4
 cp -f ZZZL_%{version} mgmt.o
-
-# uncomment below if you have an old green (revision 0) or a purple (revision 2) modem
-# revision=0 # or revision=2
-# cp -f KQD6_%{version} mgmt.o
-
 ./fextractor mgmt.o
-mv speedtch-1.bin{,.$revision.00}
-mv speedtch-2.bin{,.$revision.00}
+mv -f speedtch-1.bin{,.4.00}
+mv -f speedtch-2.bin{,.4.00}
+
+# for an old green (revision 0) or a purple (revision 2) modem
+cp -f KQD6_%{version} mgmt.o
+./fextractor mgmt.o
+mv -f speedtch-1.bin{,.0.00}
+mv -f speedtch-2.bin{,.0.00}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/speedtouch
 install -d $RPM_BUILD_ROOT/lib/firmware
 
-install mgmt.o $RPM_BUILD_ROOT%{_datadir}/speedtouch
+install mgmt/mgmt.o $RPM_BUILD_ROOT%{_datadir}/speedtouch
 install speedtch-* $RPM_BUILD_ROOT/lib/firmware
+ln -s speedtch-1.bin.0.00 $RPM_BUILD_ROOT/lib/firmware/speedtch-1.bin.2.00
+ln -s speedtch-2.bin.0.00 $RPM_BUILD_ROOT/lib/firmware/speedtch-2.bin.2.00
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(600,root,root) /lib/firmware/*
+/lib/firmware/*
 %{_datadir}/speedtouch/mgmt.o

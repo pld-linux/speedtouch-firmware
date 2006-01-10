@@ -47,14 +47,12 @@ w przestrzeni u¿ytkownika).
 %{__cc} %{rpmcflags} -o fextractor firmware-extractor/firmware.c
 
 # for a silver (revision 4) modem
-cp -f ZZZL_%{version} mgmt.o
-./fextractor mgmt.o
+./fextractor ZZZL_%{version}
 mv -f speedtch-1.bin{,.4.00}
 mv -f speedtch-2.bin{,.4.00}
 
 # for an old green (revision 0) or a purple (revision 2) modem
-cp -f KQD6_%{version} mgmt.o
-./fextractor mgmt.o
+./fextractor KQD6_%{version}
 mv -f speedtch-1.bin{,.0.00}
 mv -f speedtch-2.bin{,.0.00}
 

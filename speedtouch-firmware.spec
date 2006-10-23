@@ -58,8 +58,7 @@ mv -f speedtch-2.bin{,.0.00}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/speedtouch
-install -d $RPM_BUILD_ROOT/lib/firmware
+install -d $RPM_BUILD_ROOT{%{_datadir}/speedtouch,/lib/firmware}
 
 install mgmt/mgmt.o $RPM_BUILD_ROOT%{_datadir}/speedtouch
 install speedtch-* $RPM_BUILD_ROOT/lib/firmware

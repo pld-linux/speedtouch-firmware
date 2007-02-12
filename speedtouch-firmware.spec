@@ -1,5 +1,5 @@
 Summary:	Alcatel SpeedTouch USB ADSL modem firmware
-Summary(pl):	Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB
+Summary(pl.UTF-8):   Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB
 Name:		speedtouch-firmware
 Version:	3.012
 Release:	1
@@ -29,16 +29,16 @@ modem_run [-k] -f /usr/share/speedtouch/mgmt.o
 (-k if you are using kernel driver from Linux 2.4.22+/2.6 instead of
 userspace pppoa utility).
 
-%description -l pl
+%description -l pl.UTF-8
 Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB - potrzebne
-dla narzêdzia modem_run (z pakietu speedtouch). Wczytuje siê je
+dla narzÄ™dzia modem_run (z pakietu speedtouch). Wczytuje siÄ™ je
 poprzez:
 
 modem_run [-k] -f /usr/share/speedtouch/mgmt.o
 
-(-k nale¿y dodawaæ w przypadku u¿ywania sterownika w przestrzeni j±dra
-dostêpnego w Linuksie 2.4.22+/2.6 zamiast narzêdzia pppoa dzia³aj±cego
-w przestrzeni u¿ytkownika).
+(-k naleÅ¼y dodawaÄ‡ w przypadku uÅ¼ywania sterownika w przestrzeni jÄ…dra
+dostÄ™pnego w Linuksie 2.4.22+/2.6 zamiast narzÄ™dzia pppoa dziaÅ‚ajÄ…cego
+w przestrzeni uÅ¼ytkownika).
 
 %prep
 %setup -q -c -a1 -a2

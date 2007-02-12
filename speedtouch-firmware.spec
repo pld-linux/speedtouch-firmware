@@ -1,5 +1,5 @@
 Summary:	Alcatel SpeedTouch USB ADSL modem firmware
-Summary(pl.UTF-8):   Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB
+Summary(pl.UTF-8):	Firmware dla modemu ADSL Alcatel SpeedTouch w wersji USB
 Name:		speedtouch-firmware
 Version:	3.012
 Release:	1
